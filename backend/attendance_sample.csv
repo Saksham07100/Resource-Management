@@ -1,0 +1,16 @@
+enrollmentNo,subject,year,semester,branch,date,status
+101,Data Structures,2,3,Computer Science Engineering,2024-11-15,Present
+102,Data Structures,2,3,Computer Science Engineering,2024-11-15,Absent
+103,Data Structures,2,3,Computer Science Engineering,2024-11-15,Present
+101,Operating Systems,2,3,Computer Science Engineering,2024-11-16,Present
+102,Operating Systems,2,3,Computer Science Engineering,2024-11-16,Late
+103,Operating Systems,2,3,Computer Science Engineering,2024-11-16,Present
+101,Database Management,2,3,Computer Science Engineering,2024-11-17,Present
+102,Database Management,2,3,Computer Science Engineering,2024-11-17,Present
+103,Database Management,2,3,Computer Science Engineering,2024-11-17,Absent
+101,Computer Networks,2,3,Computer Science Engineering,2024-11-18,Late
+102,Computer Networks,2,3,Computer Science Engineering,2024-11-18,Present
+103,Computer Networks,2,3,Computer Science Engineering,2024-11-18,Present
+101,Software Engineering,2,3,Computer Science Engineering,2024-11-19,Present
+102,Software Engineering,2,3,Computer Science Engineering,2024-11-19,Present
+103,Software Engineering,2,3,Computer Science Engineering,2024-11-19,Present

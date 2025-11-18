@@ -35,6 +35,8 @@ app.use("/api/notice", require("./routes/Other Api/notice.route"));
 app.use("/api/subject", require("./routes/Other Api/subject.route"));
 app.use("/api/marks", require("./routes/Other Api/marks.route"));
 app.use("/api/branch", require("./routes/Other Api/branch.route"));
+app.use("/api/chat", require("./routes/Other Api/chat.route"));
+app.use("/api/attendance", require("./routes/Other Api/attendance.route"));
 
 app.listen(8001, () => {
   console.log(`Server Listening On http://localhost:${8001}`);

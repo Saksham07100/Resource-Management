@@ -5,6 +5,129 @@ import { HiOutlineCalendar, HiOutlineSearch, HiOutlineBookOpen } from "react-ico
 import toast from "react-hot-toast";
 import { baseApiURL } from "../../baseUrl";
 
+const dummyMaterials = {
+  "Data Structures": [
+    {
+      title: "Data Structures Mid-Sem Question Paper 2024",
+      subject: "Data Structures",
+      faculty: "Dr. Rajesh Sharma",
+      link: "https://example.com/ds-midsem-2024.pdf",
+      type: "question-paper",
+      createdAt: new Date("2024-10-15T10:30:00"),
+    },
+    {
+      title: "Data Structures End-Sem Question Paper 2023",
+      subject: "Data Structures",
+      faculty: "Dr. Rajesh Sharma",
+      link: "https://example.com/ds-endsem-2023.pdf",
+      type: "question-paper",
+      createdAt: new Date("2023-12-05T14:00:00"),
+    },
+    {
+      title: "Arrays and Linked Lists - Lecture Notes",
+      subject: "Data Structures",
+      faculty: "Dr. Rajesh Sharma",
+      link: "https://example.com/ds-notes-unit1.pdf",
+      type: "notes",
+      createdAt: new Date("2024-08-20T09:00:00"),
+    },
+    {
+      title: "Trees and Graphs Assignment",
+      subject: "Data Structures",
+      faculty: "Dr. Rajesh Sharma",
+      link: "https://example.com/ds-assignment-2.pdf",
+      type: "assignment",
+      createdAt: new Date("2024-09-10T11:00:00"),
+    },
+  ],
+  "Operating Systems": [
+    {
+      title: "Operating Systems Mid-Sem Question Paper 2024",
+      subject: "Operating Systems",
+      faculty: "Prof. Priya Patel",
+      link: "https://example.com/os-midsem-2024.pdf",
+      type: "question-paper",
+      createdAt: new Date("2024-10-18T10:30:00"),
+    },
+    {
+      title: "OS End-Sem Question Paper 2023",
+      subject: "Operating Systems",
+      faculty: "Prof. Priya Patel",
+      link: "https://example.com/os-endsem-2023.pdf",
+      type: "question-paper",
+      createdAt: new Date("2023-12-08T14:00:00"),
+    },
+    {
+      title: "Process Management Study Material",
+      subject: "Operating Systems",
+      faculty: "Prof. Priya Patel",
+      link: "https://example.com/os-process-mgmt.pdf",
+      type: "material",
+      createdAt: new Date("2024-08-25T10:00:00"),
+    },
+    {
+      title: "Memory Management - Complete Notes",
+      subject: "Operating Systems",
+      faculty: "Prof. Priya Patel",
+      link: "https://example.com/os-memory-notes.pdf",
+      type: "notes",
+      createdAt: new Date("2024-09-05T12:00:00"),
+    },
+  ],
+  "Database Management": [
+    {
+      title: "DBMS Mid-Sem Question Paper 2024",
+      subject: "Database Management",
+      faculty: "Dr. Amit Verma",
+      link: "https://example.com/dbms-midsem-2024.pdf",
+      type: "question-paper",
+      createdAt: new Date("2024-10-20T10:30:00"),
+    },
+    {
+      title: "SQL Query Practice Questions",
+      subject: "Database Management",
+      faculty: "Dr. Amit Verma",
+      link: "https://example.com/dbms-sql-practice.pdf",
+      type: "assignment",
+      createdAt: new Date("2024-09-15T11:30:00"),
+    },
+    {
+      title: "Normalization & ER Diagrams Notes",
+      subject: "Database Management",
+      faculty: "Dr. Amit Verma",
+      link: "https://example.com/dbms-normalization.pdf",
+      type: "notes",
+      createdAt: new Date("2024-08-30T09:30:00"),
+    },
+  ],
+  "Computer Networks": [
+    {
+      title: "Computer Networks Mid-Sem 2024",
+      subject: "Computer Networks",
+      faculty: "Prof. Vikram Rao",
+      link: "https://example.com/cn-midsem-2024.pdf",
+      type: "question-paper",
+      createdAt: new Date("2024-10-22T10:30:00"),
+    },
+    {
+      title: "CN End-Sem Question Paper 2023",
+      subject: "Computer Networks",
+      faculty: "Prof. Vikram Rao",
+      link: "https://example.com/cn-endsem-2023.pdf",
+      type: "question-paper",
+      createdAt: new Date("2023-12-10T14:00:00"),
+    },
+    {
+      title: "TCP/IP Protocol Suite Study Material",
+      subject: "Computer Networks",
+      faculty: "Prof. Vikram Rao",
+      link: "https://example.com/cn-tcpip.pdf",
+      type: "material",
+      createdAt: new Date("2024-09-01T10:00:00"),
+    },
+  ],
+};
+
 const Material = () => {
   const [subject, setSubject] = useState();
   const [selected, setSelected] = useState();
@@ -45,16 +168,30 @@ const Material = () => {
         { headers }
       )
       .then((response) => {
-        if (response.data.success) {
+        if (response.data.success && response.data.material.length > 0) {
           setMaterial(response.data.material);
         } else {
-          toast.error("No material found for this subject");
+          // Use dummy data if no real data available
+          if (dummyMaterials[selected]) {
+            setMaterial(dummyMaterials[selected]);
+            toast.success(`Showing sample materials for ${selected}`);
+          } else {
+            setMaterial([]);
+            toast.error("No material found for this subject");
+          }
         }
         setIsLoading(false);
       })
       .catch((error) => {
         console.error(error);
-        toast.error("Error fetching material");
+        // Use dummy data on error
+        if (dummyMaterials[selected]) {
+          setMaterial(dummyMaterials[selected]);
+          toast.success(`Showing sample materials for ${selected}`);
+        } else {
+          setMaterial([]);
+          toast.error("Error fetching material");
+        }
         setIsLoading(false);
       });
   };
@@ -141,9 +278,23 @@ const Material = () => {
                       {item.title}
                       {item.link && <IoMdLink className="w-5 h-5" />}
                     </h3>
-                    <p className="text-gray-600 mt-1">
-                      {item.subject} • {item.faculty}
-                    </p>
+                    <div className="flex items-center gap-3 mt-1">
+                      <p className="text-gray-600">
+                        {item.subject} • {item.faculty}
+                      </p>
+                      {item.type && (
+                        <span className={`px-3 py-1 text-xs font-medium rounded-full ${
+                          item.type === 'question-paper' ? 'bg-purple-100 text-purple-700' :
+                          item.type === 'notes' ? 'bg-green-100 text-green-700' :
+                          item.type === 'assignment' ? 'bg-orange-100 text-orange-700' :
+                          'bg-blue-100 text-blue-700'
+                        }`}>
+                          {item.type === 'question-paper' ? 'Question Paper' : 
+                           item.type === 'notes' ? 'Notes' :
+                           item.type === 'assignment' ? 'Assignment' : 'Material'}
+                        </span>
+                      )}
+                    </div>
                   </div>
                   <div className="flex items-center text-gray-500 text-sm">
                     <HiOutlineCalendar className="w-4 h-4 mr-1" />

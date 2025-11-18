@@ -7,12 +7,14 @@ import { baseApiURL } from "../../baseUrl";
 import toast from "react-hot-toast";
 import { HiOutlineUserCircle, HiOutlineLockClosed, HiOutlineMail, HiOutlinePhone, HiOutlineAcademicCap, HiOutlineIdentification } from "react-icons/hi";
 import { motion } from "framer-motion";
+import { useTheme } from "../../context/ThemeContext";
 
 const Profile = () => {
   const [showPass, setShowPass] = useState(false);
   const router = useLocation();
   const [data, setData] = useState();
   const dispatch = useDispatch();
+  const { isDarkMode } = useTheme();
   const [password, setPassword] = useState({
     new: "",
     current: "",
@@ -149,7 +151,9 @@ const Profile = () => {
             transition={{ delay: 0.2 }}
             className="md:col-span-1"
           >
-            <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-lg p-6">
+            <div className={`backdrop-blur-lg rounded-2xl shadow-lg p-6 ${
+              isDarkMode ? 'bg-gray-800/80' : 'bg-white/80'
+            }`}>
               <div className="flex flex-col items-center">
                 <div className="relative">
                   <div className="relative h-48 w-48 rounded-full overflow-hidden group">
@@ -181,7 +185,9 @@ const Profile = () => {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="text-2xl font-bold text-gray-800 mt-4"
+                  className={`text-2xl font-bold mt-4 ${
+                    isDarkMode ? 'text-gray-100' : 'text-gray-800'
+                  }`}
                 >
                   {data.firstName} {data.middleName} {data.lastName}
                 </motion.h2>
@@ -189,7 +195,7 @@ const Profile = () => {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.4 }}
-                  className="text-gray-500"
+                  className={isDarkMode ? 'text-gray-400' : 'text-gray-500'}
                 >
                   Student
                 </motion.p>
@@ -204,21 +210,33 @@ const Profile = () => {
             transition={{ delay: 0.3 }}
             className="md:col-span-2"
           >
-            <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-lg p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-6">Personal Information</h3>
+            <div className={`backdrop-blur-lg rounded-2xl shadow-lg p-6 ${
+              isDarkMode ? 'bg-gray-800/80' : 'bg-white/80'
+            }`}>
+              <h3 className={`text-xl font-bold mb-6 ${
+                isDarkMode ? 'text-gray-100' : 'text-gray-800'
+              }`}>Personal Information</h3>
               <div className="space-y-4">
                 <motion.div 
                   initial={{ x: 20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.4 }}
-                  className="flex items-center gap-3 p-4 bg-white/50 rounded-xl hover:bg-white/80 transition-all duration-300"
+                  className={`flex items-center gap-3 p-4 rounded-xl transition-all duration-300 ${
+                    isDarkMode 
+                      ? 'bg-gray-700/50 hover:bg-gray-700/80' 
+                      : 'bg-white/50 hover:bg-white/80'
+                  }`}
                 >
                   <div className="bg-blue-100 p-3 rounded-full">
                     <HiOutlineIdentification className="w-5 h-5 text-blue-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Enrollment Number</p>
-                    <p className="font-medium">{data.enrollmentNo}</p>
+                    <p className={`text-sm ${
+                      isDarkMode ? 'text-gray-400' : 'text-gray-500'
+                    }`}>Enrollment Number</p>
+                    <p className={`font-medium ${
+                      isDarkMode ? 'text-gray-100' : 'text-gray-900'
+                    }`}>{data.enrollmentNo}</p>
                   </div>
                 </motion.div>
 
@@ -226,14 +244,22 @@ const Profile = () => {
                   initial={{ x: 20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.5 }}
-                  className="flex items-center gap-3 p-4 bg-white/50 rounded-xl hover:bg-white/80 transition-all duration-300"
+                  className={`flex items-center gap-3 p-4 rounded-xl transition-all duration-300 ${
+                    isDarkMode 
+                      ? 'bg-gray-700/50 hover:bg-gray-700/80' 
+                      : 'bg-white/50 hover:bg-white/80'
+                  }`}
                 >
                   <div className="bg-purple-100 p-3 rounded-full">
                     <HiOutlineAcademicCap className="w-5 h-5 text-purple-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Branch & Semester</p>
-                    <p className="font-medium">{data.branch} • Semester {data.semester}</p>
+                    <p className={`text-sm ${
+                      isDarkMode ? 'text-gray-400' : 'text-gray-500'
+                    }`}>Branch & Semester</p>
+                    <p className={`font-medium ${
+                      isDarkMode ? 'text-gray-100' : 'text-gray-900'
+                    }`}>{data.branch} • Semester {data.semester}</p>
                   </div>
                 </motion.div>
 
@@ -241,14 +267,22 @@ const Profile = () => {
                   initial={{ x: 20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.6 }}
-                  className="flex items-center gap-3 p-4 bg-white/50 rounded-xl hover:bg-white/80 transition-all duration-300"
+                  className={`flex items-center gap-3 p-4 rounded-xl transition-all duration-300 ${
+                    isDarkMode 
+                      ? 'bg-gray-700/50 hover:bg-gray-700/80' 
+                      : 'bg-white/50 hover:bg-white/80'
+                  }`}
                 >
                   <div className="bg-pink-100 p-3 rounded-full">
                     <HiOutlinePhone className="w-5 h-5 text-pink-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Phone Number</p>
-                    <p className="font-medium">+91 {data.phoneNumber}</p>
+                    <p className={`text-sm ${
+                      isDarkMode ? 'text-gray-400' : 'text-gray-500'
+                    }`}>Phone Number</p>
+                    <p className={`font-medium ${
+                      isDarkMode ? 'text-gray-100' : 'text-gray-900'
+                    }`}>+91 {data.phoneNumber}</p>
                   </div>
                 </motion.div>
 
@@ -256,14 +290,22 @@ const Profile = () => {
                   initial={{ x: 20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.7 }}
-                  className="flex items-center gap-3 p-4 bg-white/50 rounded-xl hover:bg-white/80 transition-all duration-300"
+                  className={`flex items-center gap-3 p-4 rounded-xl transition-all duration-300 ${
+                    isDarkMode 
+                      ? 'bg-gray-700/50 hover:bg-gray-700/80' 
+                      : 'bg-white/50 hover:bg-white/80'
+                  }`}
                 >
                   <div className="bg-green-100 p-3 rounded-full">
                     <HiOutlineMail className="w-5 h-5 text-green-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Email Address</p>
-                    <p className="font-medium">{data.email}</p>
+                    <p className={`text-sm ${
+                      isDarkMode ? 'text-gray-400' : 'text-gray-500'
+                    }`}>Email Address</p>
+                    <p className={`font-medium ${
+                      isDarkMode ? 'text-gray-100' : 'text-gray-900'
+                    }`}>{data.email}</p>
                   </div>
                 </motion.div>
               </div>
@@ -300,7 +342,9 @@ const Profile = () => {
                     className="mt-4 space-y-4"
                   >
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className={`block text-sm font-medium mb-1 ${
+                        isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                      }`}>
                         Current Password
                       </label>
                 <input
@@ -308,11 +352,17 @@ const Profile = () => {
                   value={password.current}
                         onChange={(e) => setPassword({ ...password, current: e.target.value })}
                         placeholder="Enter your current password"
-                        className="w-full px-4 py-2 bg-white/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                        className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent ${
+                          isDarkMode 
+                            ? 'bg-gray-700 border-gray-600 text-gray-100 placeholder-gray-400' 
+                            : 'bg-white/50 border-gray-200 text-gray-900'
+                        }`}
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className={`block text-sm font-medium mb-1 ${
+                        isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                      }`}>
                         New Password
                       </label>
                 <input
@@ -320,7 +370,11 @@ const Profile = () => {
                   value={password.new}
                         onChange={(e) => setPassword({ ...password, new: e.target.value })}
                         placeholder="Enter your new password"
-                        className="w-full px-4 py-2 bg-white/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                        className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent ${
+                          isDarkMode 
+                            ? 'bg-gray-700 border-gray-600 text-gray-100 placeholder-gray-400' 
+                            : 'bg-white/50 border-gray-200 text-gray-900'
+                        }`}
                       />
                     </div>
                     <motion.button

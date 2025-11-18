@@ -13,16 +13,23 @@ import {
   HiOutlineClipboardList, 
   HiOutlineBookOpen, 
   HiOutlineBell,
-  HiOutlinePlusCircle
+  HiOutlinePlusCircle,
+  HiOutlineChatAlt2,
+  HiOutlineUsers
 } from "react-icons/hi";
 import { motion } from "framer-motion";
 import AddMaterial from "./AddMaterial";
+import ChatBot from "../../components/ChatBot";
+import FacultyDirectory from "./FacultyDirectory";
+import Attendance from "./Attendance";
+import { useTheme } from "../../context/ThemeContext";
 
 const Home = () => {
   const [selectedMenu, setSelectedMenu] = useState("My Profile");
   const router = useLocation();
   const navigate = useNavigate();
   const [load, setLoad] = useState(false);
+  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     if (router.state === null) {
@@ -35,13 +42,18 @@ const Home = () => {
     { name: "My Profile", icon: HiOutlineUserCircle },
     { name: "Timetable", icon: HiOutlineCalendar },
     { name: "Marks", icon: HiOutlineClipboardList },
+    { name: "Attendance", icon: HiOutlineClipboardList },
     { name: "Material", icon: HiOutlineBookOpen },
     { name: "Add Material", icon: HiOutlinePlusCircle },
-    { name: "Notice", icon: HiOutlineBell }
+    { name: "Notice", icon: HiOutlineBell },
+    { name: "Faculty Directory", icon: HiOutlineUsers },
+    { name: "Chat Tutor", icon: HiOutlineChatAlt2 }
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className={`min-h-screen transition-colors duration-200 ${
+      isDarkMode ? 'bg-gray-950' : 'bg-white'
+    }`}>
       {load && (
         <>
           <Navbar />
@@ -58,9 +70,15 @@ const Home = () => {
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  className="bg-white rounded-3xl shadow-sm p-8"
+                  className={`rounded-3xl shadow-lg p-8 backdrop-blur-sm ${
+                    isDarkMode 
+                      ? 'bg-gray-900 border border-gray-800' 
+                      : 'bg-white'
+                  }`}
                 >
-                  <h2 className="text-2xl font-bold text-slate-900 mb-8">Dashboard</h2>
+                  <h2 className={`text-2xl font-bold mb-8 ${
+                    isDarkMode ? 'text-gray-100' : 'text-slate-900'
+                  }`}>Dashboard</h2>
                   <ul className="space-y-4">
                     {menuItems.map((item, index) => (
                       <motion.li
@@ -73,15 +91,17 @@ const Home = () => {
                         <div 
                           className={`flex items-center gap-4 px-6 py-4 cursor-pointer rounded-2xl transition-all duration-300 ${
                             selectedMenu === item.name
-                              ? "bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 text-white"
-                              : "hover:bg-gray-50"
+                              ? "bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white shadow-lg"
+                              : isDarkMode
+                              ? "hover:bg-gray-800 text-gray-300 hover:text-white"
+                              : "hover:bg-gray-50 text-slate-600"
                           }`}
                         >
                           <item.icon className={`w-6 h-6 ${
-                            selectedMenu === item.name ? "text-white" : "text-slate-600"
+                            selectedMenu === item.name ? "text-white" : ""
                           }`} />
                           <span className={`text-lg ${
-                            selectedMenu === item.name ? "text-white" : "text-slate-600"
+                            selectedMenu === item.name ? "text-white" : ""
                           }`}>
                             {item.name}
                           </span>
@@ -100,14 +120,23 @@ const Home = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white rounded-3xl shadow-sm p-8 min-h-[600px]"
+                  className={`rounded-3xl shadow-lg p-8 min-h-[600px] backdrop-blur-sm ${
+                    isDarkMode 
+                      ? 'bg-gray-900 border border-gray-800' 
+                      : 'bg-white'
+                  }`}
                 >
                   {selectedMenu === "My Profile" && <Profile />}
                   {selectedMenu === "Timetable" && <Timetable />}
                   {selectedMenu === "Marks" && <Marks />}
+                  {selectedMenu === "Attendance" && <Attendance />}
                   {selectedMenu === "Material" && <Material />}
                   {selectedMenu === "Notice" && <Notice />}
                   {selectedMenu === "Add Material" && <AddMaterial />}
+                  {selectedMenu === "Faculty Directory" && <FacultyDirectory />}
+                  {selectedMenu === "Chat Tutor" && (
+                    <ChatBot loginid={router.state?.loginid} />
+                  )}
                 </motion.div>
               </div>
             </motion.div>

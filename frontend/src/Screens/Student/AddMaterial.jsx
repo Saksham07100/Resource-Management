@@ -17,6 +17,7 @@ export default function AddMaterial() {
     title: "",
     subject: "",
     faculty: fullname.split(" ")[0] + " " + fullname.split(" ")[2],
+    type: "material",
   });
 
   useEffect(() => {
@@ -49,7 +50,7 @@ export default function AddMaterial() {
     formData.append("title", selected.title);
     formData.append("subject", selected.subject);
     formData.append("faculty", selected.faculty);
-    formData.append("type", "material");
+    formData.append("type", selected.type);
     formData.append("name", link);
     
     axios
@@ -64,6 +65,7 @@ export default function AddMaterial() {
             title: "",
             subject: "",
             faculty: fullname.split(" ")[0] + " " + fullname.split(" ")[2],
+            type: "material",
           });
           setFile("");
         } else {
@@ -117,6 +119,23 @@ export default function AddMaterial() {
                     </option>
                   );
                 })}
+            </select>
+          </div>
+          <div className="w-[80%] mt-2">
+            <label htmlFor="type">Material Type</label>
+            <select
+              value={selected.type}
+              name="type"
+              id="type"
+              onChange={(e) =>
+                setSelected({ ...selected, type: e.target.value })
+              }
+              className="px-2 bg-blue-50 py-3 rounded-sm text-base accent-blue-700 mt-1 w-full"
+            >
+              <option value="material">Study Material</option>
+              <option value="question-paper">Question Paper</option>
+              <option value="notes">Notes</option>
+              <option value="assignment">Assignment</option>
             </select>
           </div>
           {!selected.link && (

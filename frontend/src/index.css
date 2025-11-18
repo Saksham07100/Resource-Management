@@ -18,5 +18,283 @@
   }
 }
 ::-webkit-scrollbar {
-  display: none;
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* Dark mode styles */
+.dark {
+  color-scheme: dark;
+}
+
+/* Base backgrounds */
+.dark body {
+  @apply bg-gray-950 text-gray-100;
+}
+
+/* Card and container backgrounds */
+.dark .bg-white {
+  background-color: rgb(17 24 39);
+  border: 1px solid rgb(31 41 55);
+}
+
+.dark .bg-gray-50 {
+  background-color: rgb(31 41 55);
+  border-color: rgb(55 65 81);
+}
+
+.dark .bg-gray-100 {
+  background-color: rgb(31 41 55);
+}
+
+.dark .bg-blue-50 {
+  background-color: rgba(30, 58, 138, 0.5);
+  border-color: rgba(30, 58, 138, 0.5);
+}
+
+.dark .bg-green-50 {
+  background-color: rgba(20, 83, 45, 0.5);
+  border-color: rgba(20, 83, 45, 0.5);
+}
+
+.dark .bg-red-50 {
+  background-color: rgba(127, 29, 29, 0.5);
+  border-color: rgba(127, 29, 29, 0.5);
+}
+
+.dark .bg-yellow-50 {
+  background-color: rgba(113, 63, 18, 0.5);
+  border-color: rgba(113, 63, 18, 0.5);
+}
+
+.dark .bg-purple-50 {
+  background-color: rgba(88, 28, 135, 0.5);
+  border-color: rgba(88, 28, 135, 0.5);
+}
+
+.dark .bg-indigo-50 {
+  background-color: rgba(49, 46, 129, 0.5);
+  border-color: rgba(49, 46, 129, 0.5);
+}
+
+/* Text colors */
+.dark .text-gray-600 {
+  color: rgb(156 163 175);
+}
+
+.dark .text-gray-700 {
+  color: rgb(209 213 219);
+}
+
+.dark .text-gray-800 {
+  color: rgb(229 231 235);
+}
+
+.dark .text-gray-900 {
+  color: rgb(243 244 246);
+}
+
+.dark .text-slate-600 {
+  color: rgb(148 163 184);
+}
+
+.dark .text-slate-700 {
+  color: rgb(203 213 225);
+}
+
+.dark .text-slate-900 {
+  color: rgb(241 245 249);
+}
+
+.dark .text-black {
+  color: rgb(243 244 246);
+}
+
+/* Border colors */
+.dark .border-gray-200 {
+  border-color: rgb(55 65 81);
+}
+
+.dark .border-gray-300 {
+  border-color: rgb(55 65 81);
+}
+
+/* Input and form elements */
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: rgb(31 41 55);
+  color: rgb(243 244 246);
+  border-color: rgb(55 65 81);
+}
+
+.dark input::placeholder,
+.dark select::placeholder,
+.dark textarea::placeholder {
+  color: rgb(107 114 128);
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  border-color: rgb(59 130 246);
+  --tw-ring-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Buttons */
+.dark .bg-blue-500 {
+  background-color: rgb(37 99 235);
+}
+
+.dark .bg-blue-500:hover {
+  background-color: rgb(29 78 216);
+}
+
+.dark .bg-blue-600 {
+  background-color: rgb(29 78 216);
+}
+
+.dark .hover\:bg-blue-600:hover {
+  background-color: rgb(30 64 175);
+}
+
+.dark .bg-red-500 {
+  background-color: rgb(220 38 38);
+}
+
+.dark .bg-red-500:hover {
+  background-color: rgb(185 28 28);
+}
+
+.dark .hover\:bg-red-600:hover {
+  background-color: rgb(153 27 27);
+}
+
+.dark .bg-green-500 {
+  background-color: rgb(22 163 74);
+}
+
+.dark .bg-green-500:hover {
+  background-color: rgb(21 128 61);
+}
+
+.dark .hover\:bg-green-600:hover {
+  background-color: rgb(22 101 52);
+}
+
+.dark .bg-gray-300 {
+  background-color: rgb(55 65 81);
+  color: rgb(229 231 235);
+}
+
+.dark .hover\:bg-gray-400:hover {
+  background-color: rgb(75 85 99);
+}
+
+/* Shadow adjustments */
+.dark .shadow-sm {
+  --tw-shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark .shadow {
+  --tw-shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark .shadow-lg {
+  --tw-shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+.dark .shadow-xl {
+  --tw-shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Hover effects */
+.dark .hover\:bg-gray-50:hover {
+  background-color: rgb(31 41 55);
+}
+
+.dark .hover\:bg-gray-100:hover {
+  background-color: rgb(31 41 55);
+}
+
+.dark .hover\:bg-blue-50:hover {
+  background-color: rgba(30, 58, 138, 0.5);
+}
+
+/* Table styles */
+.dark table {
+  border-color: rgb(55 65 81);
+}
+
+.dark th {
+  background-color: rgb(31 41 55);
+  color: rgb(229 231 235);
+  border-color: rgb(55 65 81);
+}
+
+.dark td {
+  border-color: rgb(55 65 81);
+}
+
+.dark tr:nth-child(even) {
+  background-color: rgba(31, 41, 55, 0.5);
+}
+
+/* Card hover effects */
+.dark .hover\:shadow-lg:hover {
+  --tw-shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Status colors in dark mode - maintain visibility */
+.dark .text-green-600 {
+  color: rgb(74 222 128);
+}
+
+.dark .text-red-600 {
+  color: rgb(248 113 113);
+}
+
+.dark .text-yellow-600 {
+  color: rgb(250 204 21);
+}
+
+.dark .text-blue-600 {
+  color: rgb(96 165 250);
+}
+
+/* Accent backgrounds maintain some color */
+.dark .bg-blue-100 {
+  background-color: rgba(30, 58, 138, 0.3);
+}
+
+.dark .bg-green-100 {
+  background-color: rgba(20, 83, 45, 0.3);
+}
+
+.dark .bg-red-100 {
+  background-color: rgba(127, 29, 29, 0.3);
+}
+
+/* Modal and overlay */
+.dark .bg-black\/50 {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition-property: color, background-color, border-color;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }

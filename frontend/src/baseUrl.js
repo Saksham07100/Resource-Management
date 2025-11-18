@@ -1,3 +1,3 @@
 export const baseApiURL = () => {
-  return "https://resource-management-oipx.onrender.com/api";
+  return "http://localhost:8001/api";
 };

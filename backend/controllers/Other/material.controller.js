@@ -16,13 +16,14 @@ const getMaterial = async (req, res) => {
 }
 
 const addMaterial = async (req, res) => {
-    let { faculty, subject, title, name } = req.body;
+    let { faculty, subject, title, name, type } = req.body;
     try {
         await Material.create({
             faculty,
             link: name,
             subject,
             title,
+            type: type || 'material',
         });
         const data = {
             success: true,
@@ -37,13 +38,14 @@ const addMaterial = async (req, res) => {
 }
 
 const updateMaterial = async (req, res) => {
-    let { faculty, link, subject, title } = req.body;
+    let { faculty, link, subject, title, type } = req.body;
     try {
         let material = await Material.findByIdAndUpdate(req.params.id, {
             faculty,
             link,
             subject,
             title,
+            type: type || 'material',
         });
         if (!material) {
             return res

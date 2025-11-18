@@ -1,0 +1,85 @@
+enrollmentNo,subject,year,semester,branch,date,status
+101,Data Structures,2,3,Computer Science Engineering,2024-11-01,Present
+102,Data Structures,2,3,Computer Science Engineering,2024-11-01,Present
+103,Data Structures,2,3,Computer Science Engineering,2024-11-01,Absent
+104,Data Structures,2,3,Computer Science Engineering,2024-11-01,Present
+105,Data Structures,2,3,Computer Science Engineering,2024-11-01,Late
+101,Data Structures,2,3,Computer Science Engineering,2024-11-04,Present
+102,Data Structures,2,3,Computer Science Engineering,2024-11-04,Absent
+103,Data Structures,2,3,Computer Science Engineering,2024-11-04,Present
+104,Data Structures,2,3,Computer Science Engineering,2024-11-04,Present
+105,Data Structures,2,3,Computer Science Engineering,2024-11-04,Present
+101,Data Structures,2,3,Computer Science Engineering,2024-11-05,Present
+102,Data Structures,2,3,Computer Science Engineering,2024-11-05,Present
+103,Data Structures,2,3,Computer Science Engineering,2024-11-05,Present
+104,Data Structures,2,3,Computer Science Engineering,2024-11-05,Late
+105,Data Structures,2,3,Computer Science Engineering,2024-11-05,Absent
+101,Operating Systems,2,3,Computer Science Engineering,2024-11-06,Present
+102,Operating Systems,2,3,Computer Science Engineering,2024-11-06,Present
+103,Operating Systems,2,3,Computer Science Engineering,2024-11-06,Present
+104,Operating Systems,2,3,Computer Science Engineering,2024-11-06,Present
+105,Operating Systems,2,3,Computer Science Engineering,2024-11-06,Absent
+101,Operating Systems,2,3,Computer Science Engineering,2024-11-07,Late
+102,Operating Systems,2,3,Computer Science Engineering,2024-11-07,Present
+103,Operating Systems,2,3,Computer Science Engineering,2024-11-07,Absent
+104,Operating Systems,2,3,Computer Science Engineering,2024-11-07,Present
+105,Operating Systems,2,3,Computer Science Engineering,2024-11-07,Present
+101,Database Management,2,3,Computer Science Engineering,2024-11-08,Present
+102,Database Management,2,3,Computer Science Engineering,2024-11-08,Present
+103,Database Management,2,3,Computer Science Engineering,2024-11-08,Present
+104,Database Management,2,3,Computer Science Engineering,2024-11-08,Absent
+105,Database Management,2,3,Computer Science Engineering,2024-11-08,Present
+101,Database Management,2,3,Computer Science Engineering,2024-11-11,Present
+102,Database Management,2,3,Computer Science Engineering,2024-11-11,Absent
+103,Database Management,2,3,Computer Science Engineering,2024-11-11,Present
+104,Database Management,2,3,Computer Science Engineering,2024-11-11,Present
+105,Database Management,2,3,Computer Science Engineering,2024-11-11,Late
+101,Computer Networks,2,3,Computer Science Engineering,2024-11-12,Present
+102,Computer Networks,2,3,Computer Science Engineering,2024-11-12,Present
+103,Computer Networks,2,3,Computer Science Engineering,2024-11-12,Present
+104,Computer Networks,2,3,Computer Science Engineering,2024-11-12,Present
+105,Computer Networks,2,3,Computer Science Engineering,2024-11-12,Present
+101,Computer Networks,2,3,Computer Science Engineering,2024-11-13,Present
+102,Computer Networks,2,3,Computer Science Engineering,2024-11-13,Late
+103,Computer Networks,2,3,Computer Science Engineering,2024-11-13,Absent
+104,Computer Networks,2,3,Computer Science Engineering,2024-11-13,Present
+105,Computer Networks,2,3,Computer Science Engineering,2024-11-13,Present
+101,Software Engineering,2,3,Computer Science Engineering,2024-11-14,Present
+102,Software Engineering,2,3,Computer Science Engineering,2024-11-14,Present
+103,Software Engineering,2,3,Computer Science Engineering,2024-11-14,Present
+104,Software Engineering,2,3,Computer Science Engineering,2024-11-14,Present
+105,Software Engineering,2,3,Computer Science Engineering,2024-11-14,Absent
+101,Software Engineering,2,3,Computer Science Engineering,2024-11-15,Present
+102,Software Engineering,2,3,Computer Science Engineering,2024-11-15,Absent
+103,Software Engineering,2,3,Computer Science Engineering,2024-11-15,Present
+104,Software Engineering,2,3,Computer Science Engineering,2024-11-15,Late
+105,Software Engineering,2,3,Computer Science Engineering,2024-11-15,Present
+101,Data Structures,2,3,Computer Science Engineering,2024-11-18,Present
+102,Data Structures,2,3,Computer Science Engineering,2024-11-18,Present
+103,Data Structures,2,3,Computer Science Engineering,2024-11-18,Present
+104,Data Structures,2,3,Computer Science Engineering,2024-11-18,Present
+105,Data Structures,2,3,Computer Science Engineering,2024-11-18,Present
+201,Mathematics,1,1,Mechanical Engineering,2024-11-01,Present
+202,Mathematics,1,1,Mechanical Engineering,2024-11-01,Present
+203,Mathematics,1,1,Mechanical Engineering,2024-11-01,Absent
+201,Mathematics,1,1,Mechanical Engineering,2024-11-04,Present
+202,Mathematics,1,1,Mechanical Engineering,2024-11-04,Late
+203,Mathematics,1,1,Mechanical Engineering,2024-11-04,Present
+201,Physics,1,1,Mechanical Engineering,2024-11-05,Present
+202,Physics,1,1,Mechanical Engineering,2024-11-05,Present
+203,Physics,1,1,Mechanical Engineering,2024-11-05,Present
+201,Physics,1,1,Mechanical Engineering,2024-11-06,Absent
+202,Physics,1,1,Mechanical Engineering,2024-11-06,Present
+203,Physics,1,1,Mechanical Engineering,2024-11-06,Late
+301,Web Development,3,5,Computer Science Engineering,2024-11-07,Present
+302,Web Development,3,5,Computer Science Engineering,2024-11-07,Present
+303,Web Development,3,5,Computer Science Engineering,2024-11-07,Absent
+301,Web Development,3,5,Computer Science Engineering,2024-11-08,Present
+302,Web Development,3,5,Computer Science Engineering,2024-11-08,Present
+303,Web Development,3,5,Computer Science Engineering,2024-11-08,Present
+301,Machine Learning,3,5,Computer Science Engineering,2024-11-11,Present
+302,Machine Learning,3,5,Computer Science Engineering,2024-11-11,Late
+303,Machine Learning,3,5,Computer Science Engineering,2024-11-11,Present
+301,Machine Learning,3,5,Computer Science Engineering,2024-11-12,Present
+302,Machine Learning,3,5,Computer Science Engineering,2024-11-12,Present
+303,Machine Learning,3,5,Computer Science Engineering,2024-11-12,Absent

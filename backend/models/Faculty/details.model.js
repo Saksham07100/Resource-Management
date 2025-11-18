@@ -44,6 +44,14 @@ const facultyDetails = new mongoose.Schema({
   profile: {
     type: String,
     required: true,
+  },
+  cabinNumber: {
+    type: String,
+    default: "Not Assigned",
+  },
+  mobileNumber: {
+    type: String,
+    default: "",
   }
 }, { timestamps: true });
 

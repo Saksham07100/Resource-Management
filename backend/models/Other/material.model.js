@@ -16,6 +16,11 @@ const Material = new mongoose.Schema({
   link: {
     type: String,
     required: true,
+  },
+  type: {
+    type: String,
+    enum: ['material', 'question-paper', 'notes', 'assignment'],
+    default: 'material',
   }
 }, { timestamps: true });
 
